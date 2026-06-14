@@ -1,0 +1,73 @@
+{
+  "name": "symfony-extensions",
+  "displayName": "Symfony Extensions",
+  "description": "Symfony Framework support for VSCode — services, routes, and parameters autocomplete, hover documentation, go-to-definition, and sidebar tree views.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:php",
+    "onLanguage:yaml"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "symfony",
+          "title": "Symfony",
+          "icon": "assets/images/symfony.svg"
+        }
+      ]
+    },
+    "views": {
+      "symfony": [
+        {
+          "id": "symfony.services",
+          "name": "Services"
+        },
+        {
+          "id": "symfony.routes",
+          "name": "Routes"
+        },
+        {
+          "id": "symfony.parameters",
+          "name": "Parameters"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "symfony.refresh",
+        "title": "Symfony: Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "symfony.refresh",
+          "when": "view == symfony.services || view == symfony.routes || view == symfony.parameters",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "eslint": "^9.39.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
