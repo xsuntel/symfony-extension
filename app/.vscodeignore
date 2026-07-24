@@ -1,0 +1,23 @@
+# Everything here is excluded from the packaged .vsix.
+# The Extension Host only needs compiled JS (out/), the manifest, assets, and docs.
+
+# Source & build config — compiled output ships instead of source.
+src/**
+**/*.ts
+!out/**
+tsconfig.json
+eslint.config.mjs
+
+# Source maps — dev-only, not needed by published consumers.
+**/*.map
+
+# Test scaffolding & downloaded test VSCode.
+.vscode-test.mjs
+.vscode-test/**
+
+# Tooling & metadata.
+.gitignore
+.vscodeignore
+node_modules/**
+CLAUDE.md
+**/CLAUDE.md

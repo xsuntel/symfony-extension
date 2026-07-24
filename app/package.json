@@ -1,0 +1,102 @@
+{
+  "name": "symfony-extensions",
+  "displayName": "Symfony Extensions",
+  "description": "Symfony Framework support for VSCode — services, routes, and parameters autocomplete, hover documentation, go-to-definition, and sidebar tree views.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-id",
+  "icon": "assets/images/symfony.png",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:php",
+    "onLanguage:yaml",
+    "workspaceContains:**/bin/console"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "symfony",
+          "title": "Symfony",
+          "icon": "assets/images/symfony.svg"
+        }
+      ]
+    },
+    "views": {
+      "symfony": [
+        {
+          "id": "symfony.services",
+          "name": "Services"
+        },
+        {
+          "id": "symfony.routes",
+          "name": "Routes"
+        },
+        {
+          "id": "symfony.parameters",
+          "name": "Parameters"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "symfony.refresh",
+        "title": "Symfony: Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "symfony.filter",
+        "title": "Symfony: Filter Items",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "symfony.clearFilter",
+        "title": "Symfony: Clear Filter",
+        "icon": "$(clear-all)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "symfony.filter",
+          "when": "view == symfony.services || view == symfony.routes || view == symfony.parameters",
+          "group": "navigation@1"
+        },
+        {
+          "command": "symfony.clearFilter",
+          "when": "view == symfony.services || view == symfony.routes || view == symfony.parameters",
+          "group": "navigation@2"
+        },
+        {
+          "command": "symfony.refresh",
+          "when": "view == symfony.services || view == symfony.routes || view == symfony.parameters",
+          "group": "navigation@3"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "pretest": "npm run compile && npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.18.0",
+    "eslint": "^9.39.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
