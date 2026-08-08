@@ -1,0 +1,14 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the extensions.json format
+	"recommendations": [
+		"anthropic.claude-code",
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.extension-test-runner",
+		"mikestead.dotenv",
+        "esbenp.prettier-vscode",
+        "github.github-vscode-theme",
+        "davidanson.vscode-markdownlint",
+		"pkief.material-icon-theme"
+	]
+}

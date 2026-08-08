@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Utility - Git - Start working",
+      "type": "shell",
+      "command": "./scripts/base/utility/git/start.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Utility - Git - Stop working",
+      "type": "shell",
+      "command": "./scripts/base/utility/git/stop.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Utility - Git - Localhost - Clear",
+      "type": "shell",
+      "command": "./scripts/base/utility/git/localhost/clear.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
