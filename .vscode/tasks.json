@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Utility - Git - Tasks - Start working",
+      "type": "shell",
+      "command": "./scripts/utility/git/tasks/start.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Utility - Git - Tasks - Stop working",
+      "type": "shell",
+      "command": "./scripts/utility/git/tasks/stop.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Utility - Git - Branch - Clear",
+      "type": "shell",
+      "command": "./scripts/utility/git/branch/clear.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
